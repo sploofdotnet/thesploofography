@@ -1,0 +1,58 @@
+---
+import { Font } from 'astro:assets';
+import bg from '../assets/bg2.png'
+const { frontmatter } = Astro.props;
+---
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{frontmatter.title}</title>
+    <Font cssVariable="--font-pop-happiness"/>
+    <style is:global define:vars={{bg: `url(${bg.src})`}}>
+      h1 {
+				color:cornflowerblue;
+				font-size: 3rem;
+				font-family: var(--font-pop-happiness);
+			}
+
+      h2 {
+				color:slategray;
+				font-family: var(--font-pop-happiness);
+			}
+
+			h3{
+				color:antiquewhite;
+				font-family: var(--font-pop-happiness);
+			}
+
+			p {
+				color:blanchedalmond;
+				font-family: var(--font-pop-happiness);
+			}
+
+			li{
+				color:slategray;
+				font-family: var(--font-pop-happiness);
+			}
+			
+			a{
+				color:darkgoldenrod;
+				font-family: var(--font-pop-happiness);
+      }
+		
+    body {
+      
+				background-image: var(--bg);
+			
+      min-height: 100vh;
+      font-family: var(--font-pop-happiness);
+    }
+  </style>
+  </head>
+  <body>
+    <h1>{frontmatter.title} by {frontmatter.author}</h1>
+    <slot />
+    <p>{frontmatter.date}</p>
+  </body>
+</html>

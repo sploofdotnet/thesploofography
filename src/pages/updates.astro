@@ -1,0 +1,51 @@
+---
+import { Font } from 'astro:assets';
+
+const base = import.meta.env.PUBLIC_AUDIO_BASE;
+const pageTitle = "updates";
+---
+
+<a href = "/">home</a>
+<a href = "/about/">about</a>
+<a href = "/updates/">updates</a>
+
+<html lang="en">
+	
+	<head>
+		<style>
+			h1 {
+				color:cornflowerblue;
+				font-size: 3rem;
+				font-family: var(--font-pop-happiness);
+			}
+
+			h3 {
+				color:antiquewhite;
+				font-family: var(--font-pop-happiness);
+			}
+
+			p {
+				color:blanchedalmond;
+				font-family: var(--font-pop-happiness);
+			}
+
+			li {
+				color:slategray;
+				font-family: var(--font-pop-happiness);
+			}
+			a {
+				color:darkgoldenrod;
+				font-family: var(--font-pop-happiness);
+			}
+		</style>
+		<Font cssVariable="--font-pop-happiness"/>
+		<meta charset=" utf-8"/>
+		<title>{pageTitle}</title>
+		</head>
+	<body>
+		<h1>{pageTitle}</h1>
+		<ul>
+			<li><a href="/updates/update-1/">update 1</a></li>
+		</ul>
+	</body>
+</html>

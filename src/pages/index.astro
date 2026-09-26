@@ -1,0 +1,49 @@
+---
+import { Font } from 'astro:assets';
+
+const base = import.meta.env.PUBLIC_AUDIO_BASE;
+---
+
+<a href = "/">home</a>
+<a href = "/about/">about</a>
+<a href = "/updates/">updates</a>
+
+<html lang="en">
+	
+	<head>
+		<style>
+			h1 {
+				color:cornflowerblue;
+				font-size: 3rem;
+				font-family: var(--font-pop-happiness);
+			}
+
+			h3{
+				color:antiquewhite;
+				font-family: var(--font-pop-happiness);
+			}
+
+			p {
+				color:blanchedalmond;
+				font-family: var(--font-pop-happiness);
+			}
+
+			li{
+				color:slategray;
+				font-family: var(--font-pop-happiness);
+			}
+
+			a{
+				color:darkgoldenrod;
+				font-family: var(--font-pop-happiness);
+			}
+		</style>
+		<Font cssVariable="--font-pop-happiness"/>
+		<meta charset=" utf-8"/>
+		<title>the sploofography</title>
+		</head>
+	<body>
+		<h1>the sploofography</h1>
+		<audio controls src={`${base}/botanicantdothis.mp3`}></audio>
+	</body>
+</html>

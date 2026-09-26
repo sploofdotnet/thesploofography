@@ -1,0 +1,7 @@
+name = "audio-proxy"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+B2_BUCKET = "sploofography"
+B2_ENDPOINT = "s3.us-east-005.backblazeb2.com"

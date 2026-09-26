@@ -1,0 +1,99 @@
+---
+import { Font } from 'astro:assets';
+
+import bg from '../assets/bg.png'
+
+const base = import.meta.env.PUBLIC_AUDIO_BASE;
+const pageTitle = "about me"
+
+const identity = {
+	firstName: "Sploof",
+	occupation: "im in college",
+	hobbies: ["making music","fighting games and platform fighters","flipping balisongs"],
+};
+
+const skills = ["im working on it ok"];
+
+const working = true;
+const finished = true;
+const album = 1;
+
+const skillColor = "antiquewhite";
+//const fontWeight = "bold";
+const textCase = "lowercase";
+---
+
+<a href = "/">home</a>
+<a href = "/about/">about</a>
+<a href = "/updates/">updates</a>
+
+<html lang="en">
+	
+	<head>
+		<meta charset=" utf-8"/>
+		<title>{pageTitle}</title>
+		<style define:vars={{skillColor,textCase, bg: bg.src}}>
+			h1 {
+				color:cornflowerblue;
+				font-size: 3rem;
+				font-family: var(--font-pop-happiness);
+			}
+
+			h3{
+				color:antiquewhite;
+				font-family: var(--font-pop-happiness);
+			}
+
+			p {
+				color:blanchedalmond;
+				font-family: var(--font-pop-happiness);
+			}
+
+			li{
+				color:slategray;
+				font-family: var(--font-pop-happiness);
+			}
+			
+			a{
+				color:darkgoldenrod;
+				font-family: var(--font-pop-happiness);
+			}
+			body{
+				background-image: url(var(--bg));
+			}
+
+			.skill{
+				color: var(--skillColor);
+				
+				text-transform: var(--textCase);
+			}
+		
+		</style>
+		<Font cssVariable="--font-pop-happiness"/>
+		</head>
+	<body>
+		<h1>{pageTitle}</h1>
+		
+        <h3>this is where i post my music and</h3>
+        <h3>maybe updates on projects too.</h3>
+
+		<p>more about me:</p>
+<ul>
+  <li>im {identity.firstName}.</li>
+  <li>{identity.occupation}.</li>
+  {identity.hobbies.length >= 2 &&
+    <li>i like {identity.hobbies[0]} and {identity.hobbies[1]}.</li>
+  }
+</ul>
+<p>im</p>
+<ul>
+  {skills.map((skill) => <li class="skill">{skill}</li>)}
+</ul>
+{working && <p>im working on the website</p>}
+{finished && <p>im not finished</p>}
+{album === 1 ? <p>album in progress</p> : <p>no songs in progress</p>}
+
+
+	</body>
+</html>
+
