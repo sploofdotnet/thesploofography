@@ -13,7 +13,7 @@ tags: ["astro", "blogging", "learning in public"]
 
 2026-09-25
 
-updates on _the sploofography_ ya feel
+updates on the splography ya feel
 
 ## what i did
 
